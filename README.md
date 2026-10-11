@@ -1,4 +1,4 @@
-# Reto 3 — Registros dinámicos académicos con listas enlazadas
+# Reto 3 - Registros dinámicos académicos con listas enlazadas
 
 Proyecto que implementa listas enlazadas simple, doble y circular desde cero, búsqueda recursiva, menús y persistencia CSV/JSON.
 
