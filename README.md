@@ -45,7 +45,7 @@ El archivo `.py` contiene tres clases de nodos (`NodoSimple`, `NodoDoble`, `Nodo
 
 ## Diseño de las tres estructuras
 
-**Lista simple — estudiantes**
+**Lista simple - estudiantes**
 
 ```text
 inicio -> [001] -> [002] -> [003] -> None
@@ -53,7 +53,7 @@ inicio -> [001] -> [002] -> [003] -> None
 
 Cada nodo almacena `id`, `nombres`, `correo` y una referencia `siguiente`. Se puede insertar al final, buscar, eliminar y mostrar estudiantes. Se mantiene una referencia `final` para enlazar eficientemente el nuevo nodo; la validación de ID único requiere una búsqueda.
 
-**Lista doble — historial por semestre**
+**Lista doble - historial por semestre**
 
 ```text
 None <- [2024-1] <-> [2024-2] <-> [2025-1] -> None
@@ -61,7 +61,7 @@ None <- [2024-1] <-> [2024-2] <-> [2025-1] -> None
 
 Cada nodo almacena `anio`, `term`, una colección de materias (cada materia contiene `cod`, `nombre` y `nota`) y referencias `anterior` y `siguiente`. La inserción conserva el orden `(anio, term)`; es posible recorrer hacia adelante y hacia atrás. Las materias son datos del semestre, **no una lista de nodos**.
 
-**Lista circular — grupos de prácticas**
+**Lista circular - grupos de prácticas**
 
 ```text
            +----------------------------+
