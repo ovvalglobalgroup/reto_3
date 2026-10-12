@@ -28,7 +28,7 @@ reto3_listas/
     └── grupos.json
 ```
 
-El archivo `.py` contiene tres clases de nodos (`NodoSimple`, `NodoDoble`, `NodoCircular`), tres listas enlazadas (`ListaSimple`, `ListaDoble`, `ListaCircular`), las funciones CSV/JSON, la clase `SistemaAcademico`, los submenús, los reportes y la demostración.
+El archivo `.py` contiene tres clases de nodos (`NodoSimple`, `NodoDoble`, `NodoCircular`), tres listas enlazadas (`ListaSimple`, `ListaDoble`, `ListaCircular`), las funciones CSV/JSON, la clase `SistemaAcademico`, los submenús y los reportes.
 
 ## Diseño de las tres estructuras
 
@@ -84,26 +84,27 @@ Las importaciones validan primero una estructura temporal para no borrar la info
 
 ## Complejidad temporal
 
-| Operación | Complejidad |
-|---|---|
-| Lista simple: insertar al final | O(n), por validación de ID único; enlazar es O(1) |
-| Lista simple: buscar, eliminar, recorrer | O(n) |
-| Lista doble: insertar ordenado, buscar, eliminar | O(n) |
-| Lista doble: recorrer adelante/atrás | O(n) |
-| Lista circular: insertar | O(n), por validación de grupo único |
-| Lista circular: buscar recursivamente | O(n) tiempo y O(n) espacio de pila, peor caso |
-| Lista circular: eliminar | O(n) |
-| Lista circular: rotar k posiciones | O(k mod n) tiempo y O(1) espacio adicional (para n > 0) |
-| Lista circular: recorrer v vueltas | O(n · v) |
-| Reporte top 3 | Recorre todos los semestres; también procesa las materias de cada uno |
+| Operación | Tiempo | Espacio adicional |
+|---|---|---|
+| Lista simple: insertar al final | O(n) | O(1) |
+| Lista simple: buscar, eliminar, recorrer | O(n) | O(1) |
+| Lista doble: insertar ordenado | O(n + m) | O(m) |
+| Lista doble: buscar, eliminar | O(n) | O(1) |
+| Lista doble: recorrer adelante/atrás | O(n) | O(1) |
+| Lista circular: insertar | O(n) | O(n) |
+| Lista circular: buscar recursivamente | O(n) | O(n) |
+| Lista circular: eliminar | O(n) | O(1) |
+| Lista circular: rotar k posiciones | O(1 + k mod n) | O(1) |
+| Lista circular: recorrer v vueltas | O(n · v) | O(1) |
+| Reporte top 3 | O(n · m) | O(1) |
+
+Donde **n** representa la cantidad de nodos, **m** el máximo de materias por semestre, **k** los pasos de rotación y **v** las vueltas solicitadas. Las complejidades expresan el peor caso; la rotación supone n mayor que cero.
 
 ## Casos para la prueba
 
-Ejecute `--demo` para reproducir automáticamente estas comprobaciones, o hágalas desde el menú:
+Los siguientes casos de prueba permiten verificar el funcionamiento de las tres listas enlazadas, la persistencia de datos y los reportes académicos. Las operaciones se realizan mediante el menú interactivo del programa:
 
 1. **Inscritos**: agregar Ana, Luis y Liliana; buscar y eliminar Luis; mostrar; exportar CSV; limpiar; importar CSV y mostrar de nuevo
 2. **Historial**: insertar 2025-1, 2024-2 y 2024-1 en ese orden; confirmar que quedan ordenados; recorrer en ambos sentidos; buscar; exportar JSON; limpiar; importar JSON
 3. **Grupos**: agregar A, B y C; buscar B recursivamente; rotar dos pasos de A hasta C; recorrer dos vueltas; eliminar B; confirmar que el último nodo apunta al primero; exportar/importar JSON
 4. **Reportes**: comprobar los tres promedios superiores, el grupo actual y la cantidad de inscritos
-
-
