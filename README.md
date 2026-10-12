@@ -15,19 +15,6 @@ Desde la carpeta del proyecto, ejecutar:
 py index.py
 ```
 
-En Windows también se puede utilizar:
-
-```bash
-py index.py
-```
-
-Para mostrar automáticamente los casos mínimos exigidos por el docente:
-
-```bash
-python index.py --demo
-```
-
-La demostración crea una carpeta `data/demostracion/` con CSV y JSON de ejemplo, **sin modificar los archivos normales** del menú.
 
 ## Organización
 
